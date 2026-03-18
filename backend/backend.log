@@ -1,0 +1,15 @@
+
+> backend@1.0.0 dev
+> ts-node-dev --respawn --transpile-only src/index.ts
+
+[INFO] 14:44:12 ts-node-dev ver. 2.0.0 (using ts-node ver. 10.9.2, typescript ver. 5.9.3)
+[dotenv@17.3.1] injecting env (0) from .env -- tip: 🔐 encrypt with Dotenvx: https://dotenvx.com
+Error: listen EADDRINUSE: address already in use :::4000
+    at Server.setupListenHandle [as _listen2] (node:net:1940:16)
+    at listenInCluster (node:net:1997:12)
+    at Server.listen (node:net:2102:7)
+    at /Users/shyamgupta/Desktop/E-Commerce Platform/ecommerce-platform/backend/src/index.ts:45:51
+    at new Promise (<anonymous>)
+    at startApolloServer (/Users/shyamgupta/Desktop/E-Commerce Platform/ecommerce-platform/backend/src/index.ts:45:9)
+    at processTicksAndRejections (node:internal/process/task_queues:103:5)
+[ERROR] 14:44:12 Error: listen EADDRINUSE: address already in use :::4000
