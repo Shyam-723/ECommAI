@@ -4,7 +4,7 @@ import { createGroq } from '@ai-sdk/groq';
 import { z } from 'zod';
 
 const groq = createGroq({
-  apiKey: process.env.GROQ_API_KEY || "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",
+  apiKey: process.env.GROQ_API_KEY
 });
 
 // Simple in-memory rate limiter (max 5 requests per minute per IP)
@@ -16,7 +16,7 @@ export async function POST(req: Request) {
   // Simple IP extraction
   const ip = req.headers.get('x-forwarded-for') || '127.0.0.1';
   const now = Date.now();
-  
+
   const limitWindow = rateLimitMap.get(ip);
   if (!limitWindow || now - limitWindow.windowStart > WINDOW_MS) {
     rateLimitMap.set(ip, { count: 1, windowStart: now });
