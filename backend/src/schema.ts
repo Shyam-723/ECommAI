@@ -2,7 +2,6 @@ export const typeDefs = `#graphql
   type User {
     id: ID!
     email: String!
-    role: String!
     createdAt: String!
   }
 
@@ -39,7 +38,7 @@ export const typeDefs = `#graphql
 
   type Query {
     me: User
-    products(search: String): [Product!]!
+    products(search: String, minPrice: Float, maxPrice: Float): [Product!]!
     product(id: ID!): Product
     orders: [Order!]!
   }

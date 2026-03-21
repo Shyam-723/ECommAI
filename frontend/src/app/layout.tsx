@@ -3,6 +3,7 @@ import { Roboto } from 'next/font/google';
 import './globals.css';
 import { StoreProvider } from '@/context/StoreContext';
 import Header from '@/components/Header';
+import AIChatBot from '@/components/AIChatBot';
 const roboto = Roboto({ weight: ['400', '500', '700'], subsets: ['latin'], variable: '--font-roboto' });
 
 export const metadata: Metadata = {
@@ -21,6 +22,7 @@ export default function RootLayout({
         <StoreProvider>
           <Header />
           {children}
+          <AIChatBot />
         </StoreProvider>
       </body>
     </html>
